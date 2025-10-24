@@ -3,29 +3,29 @@
 using namespace std;
 
 void swap(int &a, int &b) {
-    int temp = a;
+    int t = a;
     a = b;
-    b = temp;
+    b = t;
 }
 void SelectionSort(int a[], int n) {
     for (int i = 0; i < n - 1; i++) {
-        int min = i;
+        int minn = i;
         for (int j = i + 1; j < n; j++) {
-            if (a[j] < a[min]) {
-                min = j;
+            if (a[j] < a[minn]) {
+                minn = j;
             }
         }
-        swap(a[i], a[min]);
+        swap(a[i], a[minn]);
     }
 }
 void InsertionSort(int a[], int n) {
 	for (int i = 1; i < n; i) {
-		int x = a[i], pos = i - 1;
-		while (pos >= 0 && x < a[pos]) {
-			a[pos + 1] = a[pos];
-			--pos;
+		int x = a[i], p = i - 1;
+		while (p >= 0 && x < a[p]) {
+			a[p + 1] = a[p];
+			--p;
 		}
-		a[pos + 1] = x;
+		a[p + 1] = x;
 	}
 }
 void BubbleSort(int a[], int n) {
